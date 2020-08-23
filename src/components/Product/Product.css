@@ -1,0 +1,38 @@
+.products {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+.single-product-details {
+    margin-left: 30px;
+}
+.product-name {
+    color: #0F1111;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.small-details {
+    color: lightslategray;
+    font-size: 14px;
+}
+
+.price {
+    font-size: 22px;
+}
+
+.product-btn {
+    background: #FF9800;
+    color: black;
+    border: 1px solid #FF9800;
+    border-radius: 2px;
+    width: 180px;
+    height: 36px;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.svg-inline--fa {
+    margin-right: 10px;
+}
