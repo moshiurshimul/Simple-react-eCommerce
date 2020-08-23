@@ -33,6 +33,10 @@
     text-transform: capitalize;
 }
 
+.product-btn:focus {
+    outline: none;
+}
+
 .svg-inline--fa {
     margin-right: 10px;
 }

@@ -12,3 +12,11 @@
 .cart-container {
     margin-left: 20px;
 }
+
+.cart-top {
+    text-align: center;
+}
+
+.cart-top p {
+    font-weight: 700;
+}
