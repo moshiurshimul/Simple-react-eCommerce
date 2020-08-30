@@ -14,7 +14,6 @@ const Shop = () => {
     const productHandleClick = (product) => {
         console.log('clicked', product);
         const newCart = [...cart, product];
-        // console.log(newCart)
         setCart(newCart);
     }
 
@@ -23,7 +22,7 @@ const Shop = () => {
         <div className="shop-container">
             <div className="product-container">
                 {
-                    products.map(product => <Product productData={product} handleClick={productHandleClick}></Product>)
+                    products.map(product => <Product productData={product} showAddToCart={true} handleClick={productHandleClick}></Product>)
                 } 
             </div>
             <div className="cart-container">

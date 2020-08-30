@@ -2,10 +2,11 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Shop from './components/Shop/Shop';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import OrderReview from './components/OrderReview/OrderReview'
 import Invantory from './components/Inventory/Invantory';
 import Notfound from './components/Notfound/Notfound';
+import ProductDetail from './components/ProductDetail/ProductDetail';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
 
          <Route path="/manage">
             <Invantory></Invantory>
+         </Route>
+         <Route path="/product/:productKey">
+            <ProductDetail></ProductDetail>
          </Route>
 
          <Route exact path="/">
