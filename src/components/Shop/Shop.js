@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import fakeData from '../../fakeData';
 import './Shop.css';
@@ -8,17 +7,28 @@ import { addToDatabaseCart } from '../../utilities/databaseManager';
 
 const Shop = () => {
     const first10Products = fakeData.slice(0,10);
+    // eslint-disable-next-line no-unused-vars
     const [products, setProducts] = useState(first10Products);
 
     const [cart, setCart] = useState([]);
 
     const productHandleClick = (product) => {
-        // console.log('clicked', product);
-        const newCart = [...cart, product];
-        setCart(newCart);
-        const sameProducts = newCart.filter(pd => pd.key === product.key);
-        const sameProductsCount = sameProducts.length;
-        addToDatabaseCart(product.key, sameProductsCount);
+        const sameProduct = cart.find(pd => pd.key === product.key)
+        let count = 1;
+        let newCart;
+        if(sameProduct) {
+            count = sameProduct.quantity + 1
+            sameProduct.quantity = count;
+            const others = cart.filter(pd => pd.key !== product.key);
+            newCart = [...others, sameProduct]
+            setCart(newCart);
+        }
+        else {
+            product.quantity = 1;
+            const newCart = [...cart, product];
+            setCart(newCart);
+        }
+        addToDatabaseCart(product.key, count);
     }
 
     return (

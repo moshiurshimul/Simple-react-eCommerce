@@ -3,9 +3,11 @@ import { getDatabaseCart, removeFromDatabaseCart } from '../../utilities/databas
 import fakeData from '../../fakeData'
 import { useState } from 'react';
 import ReviewItem from '../ReviewItem/ReviewItem';
+import Cart from '../Cart/Cart';
+import './OrderReview.css';
 
 const OrderReview = () => {
-    const [cartitem, setCartItem] = useState([]);
+    const [cart, setCart] = useState([]);
 
     // Collect item data from Database
     useEffect(() => {
@@ -19,22 +21,26 @@ const OrderReview = () => {
             return product;
         });
 
-        setCartItem(cartProducts);
+        setCart(cartProducts);
 
     }, []);
 
     // Removing item from cart and database
     const removeHandle = (removeitemkey) => {
-        const newCart = cartitem.filter(pd => pd.key !== removeitemkey);
-        setCartItem(newCart);
+        const newCart = cart.filter(pd => pd.key !== removeitemkey);
+        setCart(newCart);
         removeFromDatabaseCart(removeitemkey);
     }
     return (
-        <div>
-            <h1>Order Details: {cartitem.length}</h1>
+        <div className="order-review-container">
+            <div className="order-items">
             {
-                cartitem.map(pd => <ReviewItem key={pd.key} product={pd} removeHandle={removeHandle}></ReviewItem>)
+                cart.map(pd => <ReviewItem key={pd.key} product={pd} removeHandle={removeHandle}></ReviewItem>)
             }
+            </div>
+            <div className="cart-container">
+                <Cart cart={cart}></Cart>
+            </div>
         </div>
     );
 };
