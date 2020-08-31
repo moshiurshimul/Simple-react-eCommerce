@@ -26,7 +26,7 @@ const Cart = (props) => {
             <h2>Cart Details</h2>
             <h3>Order Summary</h3>
             <p>Item Ordered: {cart.length}</p>
-            <p>Item Price: ${total}</p>
+            <p>Item Price: ${total.toFixed(2)}</p>
             <p>Shipping fee: ${shipping}</p>
             <p className="grand-total">Grand Total : {GrandTotal}</p>
         </div>
