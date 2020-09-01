@@ -39,7 +39,10 @@ const OrderReview = () => {
             }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}>
+                    <button className="product-btn">Place Order</button>
+                </Cart>
+
             </div>
         </div>
     );
