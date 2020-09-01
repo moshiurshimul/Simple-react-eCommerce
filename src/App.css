@@ -4,6 +4,32 @@
   color: #61dafb;
 }
 
+nav {
+  background: black;
+  text-align: left;
+  
+}
+
+.main-nav a{
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 5px;
+  line-height: 40px;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+nav Link {
+  color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 5px;
+    line-height: 40px;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
 
 
 @keyframes App-logo-spin {
